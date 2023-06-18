@@ -12,4 +12,17 @@ Una función suspendida es una función que puede pausar su ejecución sin bloqu
   
 ![supend](https://github.com/davidmoralesluis/coroutine/assets/91198406/23a56b80-47fc-4abb-b751-1ea803c3d3ac)
 
+### 3. Generador de alcance y concurrencia
+
+Se puede usar un generador coroutineScope dentro de cualquier función de suspensión para realizar múltiples operaciones simultáneas.
+
+![image](https://github.com/davidmoralesluis/coroutine/assets/91198406/10296523-54fd-4ca1-9089-b4e7e4dad5bd)
+
+### 4. Un trabajo explícito
+
+Un generador de corrutinas de lanzamiento devuelve un objeto Job que es un identificador de la corrutina lanzada y se puede usar para esperar explícitamente a que se complete.
+
+![image](https://github.com/davidmoralesluis/coroutine/assets/91198406/2ee4a137-1964-4cee-8d02-b835dfe39dff)
+
+
 
