@@ -8,6 +8,7 @@ import androidx.activity.ComponentActivity
 import com.example.constraintlayout.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -23,13 +24,14 @@ class MainActivity : ComponentActivity() {
             primero()
         }
     }
+    fun primero() = runBlocking {
+        launch { primeroSuspend() }
+        println("Hello") // main coroutine continues while a previous one is delayed
+    }
 
-    fun primero() = runBlocking { // this: CoroutineScope
-        launch { // launch a new coroutine and continue
+    suspend fun primeroSuspend() = coroutineScope { // this: CoroutineScope
             delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
             println("World!") // print after delay
         }
-        println("Hello") // main coroutine continues while a previous one is delayed
-    }
 
 }
