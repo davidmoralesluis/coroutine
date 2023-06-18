@@ -17,23 +17,22 @@ class MainActivity : ComponentActivity() {
 
         button.setOnClickListener {
             runBlocking {
-                coroutinSuspend()
+                coroutin()
                 println("Final")
             }
 
         }
     }
 
-    suspend fun coroutinSuspend() = coroutineScope { // this: CoroutineScope
-        launch {
+    suspend fun coroutin() = coroutineScope { // this: CoroutineScope
+
+        val launchFunc = launch {
             delay(2000L) // non-blocking delay for 2 second (default time unit is ms)
-            println("World_2sec") // print after delay
-        }
-        launch {
-            delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
-            println("World_1sec") // print after delay
+            println("World") // print after delay
         }
         println("Hello")
+        launchFunc.join()
+        println("Done")
         }
 
 }
