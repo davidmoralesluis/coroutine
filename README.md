@@ -24,5 +24,11 @@ Un generador de corrutinas de lanzamiento devuelve un objeto Job que es un ident
 
 ![image](https://github.com/davidmoralesluis/coroutine/assets/91198406/2ee4a137-1964-4cee-8d02-b835dfe39dff)
 
+### 5. rutinas son ligeras
+
+Las corrutinas consumen menos recursos que los subprocesos de JVM
+
+![image](https://github.com/davidmoralesluis/coroutine/assets/91198406/45f1af60-7378-42a9-b382-d761a39c9f5a)
+
 
 
