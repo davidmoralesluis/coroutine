@@ -16,23 +16,19 @@ class MainActivity : ComponentActivity() {
         val button = findViewById<Button>(R.id.button)
 
         button.setOnClickListener {
-            runBlocking {
-                coroutin()
-                println("Final")
-            }
-
+            coroutin()
+            println("Final")
         }
+
     }
 
-    suspend fun coroutin() = coroutineScope { // this: CoroutineScope
-
-        val launchFunc = launch {
-            delay(2000L) // non-blocking delay for 2 second (default time unit is ms)
-            println("World") // print after delay
-        }
-        println("Hello")
-        launchFunc.join()
-        println("Done")
+     fun coroutin() = runBlocking {
+            repeat(1000) {
+                launch {
+                    delay(1000L)
+                    println("-----")
+                }
+            }
         }
 
 }
